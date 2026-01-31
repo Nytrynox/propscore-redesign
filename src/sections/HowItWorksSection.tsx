@@ -1,5 +1,5 @@
 import { useRef, useLayoutEffect } from 'react';
-import { Play, ArrowRight } from 'lucide-react';
+import { Play } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -14,7 +14,7 @@ interface ProcessCardProps {
   color: string;
 }
 
-const ProcessCard = ({ number, title, description, image, tag, color }: ProcessCardProps) => {
+const ProcessCard = ({ number, title, description, image, tag }: ProcessCardProps) => {
   return (
     <div className="relative w-[400px] lg:w-[500px] h-[600px] flex-shrink-0 bg-white rounded-sm overflow-hidden border border-black/5 group mx-4 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-500">
       {/* Image Layer */}

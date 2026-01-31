@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { Fingerprint } from 'lucide-react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 
 // ... other imports ... 
 
