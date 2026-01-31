@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Solid Theme - Corrected */
+    --background: 0 0% 100%; /* Pure White */
+    --foreground: 0 0% 0%; /* Pure Black */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    
+    /* Premium Dark Yellow - #F5C518 */
+    /* HSL: 47deg 90% 53% */
+    --primary: 47 90% 53%; 
+    --primary-foreground: 0 0% 0%; /* Black styling on yellow for readability */
+    
+    --secondary: 0 0% 8%; /* Very Dark Gray/Black for secondary elements */
+    --secondary-foreground: 0 0% 100%; /* White text on secondary */
+    
+    --muted: 0 0% 96%; /* Light gray for muted backgrounds */
+    --muted-foreground: 0 0% 40%;
+    
+    --accent: 47 90% 53%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 47 90% 53%; /* Focus ring matches primary yellow */
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-black antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    @apply text-black; /* Ensure headings are black */
+  }
+  
+  p, span, div {
+     /* Default text color is black via body, but ensure no accidental overrides */
+  }
+  
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Solid Theme Components */
+  
+  /* Primary Button - YELLOW */
+  .primary-btn {
+    @apply relative px-8 py-3 rounded-lg font-bold text-sm tracking-wide transition-all duration-300;
+    background-color: hsl(var(--primary)); /* Yellow */
+    color: hsl(var(--primary-foreground)); /* Black */
+    border: none;
+    box-shadow: 0 4px 14px 0 rgba(245, 197, 24, 0.39);
+  }
+  
+  .primary-btn:hover {
+    @apply -translate-y-0.5 shadow-lg;
+    background-color: #E0B315; /* Slightly darker yellow on hover */
+  }
+  
+  /* Secondary Button - BLACK */
+  .secondary-btn {
+    @apply relative px-8 py-3 rounded-lg font-bold text-sm tracking-wide transition-all duration-300;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+  }
+  
+  .secondary-btn:hover {
+    @apply bg-gray-900 -translate-y-0.5 shadow-lg;
+  }
+
+  /* Outline Button - BLACK TEXT / YELLOW BORDER/HOVER? */
+  .outline-btn {
+    @apply relative px-8 py-3 rounded-lg font-bold text-sm tracking-wide transition-all duration-300;
+    background-color: transparent;
+    color: #000000;
+    border: 2px solid #000000;
+  }
+  
+  .outline-btn:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+  
+  /* Glass Card replaced with Solid Card */
+  .glass-card {
+    @apply bg-white border border-gray-100 shadow-xl rounded-[28px];
+    /* Optional: Add a subtle yellow glow or border if "main things" includes card borders? 
+       For now keeping clean as requested, but maybe a yellow accent. */
+  }
+  
+  /* Section Label - YELLOW */
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.08em] font-bold;
+    color: hsl(var(--primary));
+  }
+}
